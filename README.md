@@ -1,6 +1,6 @@
 # KaiheilaBot
 
-Kaiheila music bot with NeteaseCloudMusic backend.
+[WIP] Kaiheila music bot with NeteaseCloudMusic backend.
 
 ## Getting started
 
