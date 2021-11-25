@@ -18,3 +18,6 @@
 .bin/
 .task
 .envrc
+
+# Project ignore
+config/khlbot.toml
