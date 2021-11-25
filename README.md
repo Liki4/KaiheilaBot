@@ -1,16 +1,17 @@
-# 🐭 go-template ![Go](https://github.com/wuhan005/go-template/workflows/Go/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/wuhan005/go-template)](https://goreportcard.com/report/github.com/wuhan005/go-template) [![Sourcegraph](https://img.shields.io/badge/view%20on-Sourcegraph-brightgreen.svg?logo=sourcegraph)](https://sourcegraph.com/github.com/wuhan005/go-template)
+# KaiheilaBot
 
-My Go Project Template
+[WIP] Kaiheila music bot with NeteaseCloudMusic backend.
 
 ## Getting started
 
-* Update `README.md`.
-    * Choose a cool emoji.
-    * Rename the project.
-    * Update the Go badge, Go report card badge.
-    * Update the project description.
-    * Choose a friendly open source license.
-* Rename the package in `go.mod`.
-* Inspire the world!
+```shell
+go mod tidy
+```
+
+```shell
+go build .
+```
 
 ## License
+
+GNU Affero General Public License v3.0
