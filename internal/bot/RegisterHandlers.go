@@ -7,4 +7,5 @@ import (
 
 func RegisterHandlers(s *khl.Session) {
 	s.AddHandler(Handlers.PingHandler)
+	s.AddHandler(Handlers.RobotHandler)
 }

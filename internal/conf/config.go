@@ -13,6 +13,10 @@ type config struct {
 	Ncm struct {
 		NcmApi string `toml:"ncmapi"`
 	} `toml:"ncm"`
+
+	FFRobot struct {
+		RobotApi string `toml:"robotapi"`
+	} `toml:"ffrobot"`
 }
 
 var conf *config
