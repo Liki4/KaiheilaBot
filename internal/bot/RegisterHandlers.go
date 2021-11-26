@@ -8,4 +8,5 @@ import (
 func RegisterHandlers(s *khl.Session) {
 	s.AddHandler(Handlers.PingHandler)
 	s.AddHandler(Handlers.RobotHandler)
+	//s.AddHandler(Handlers.TodayHandler)
 }

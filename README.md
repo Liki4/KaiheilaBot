@@ -1,6 +1,6 @@
 # KaiheilaBot
 
-[WIP] Kaiheila music bot with NeteaseCloudMusic backend.
+[WIP] Kaiheila bot 工具人羊驼
 
 ## Getting started
 
@@ -12,9 +12,18 @@ go mod tidy
 go build .
 ```
 
-## NCMApi
+## API
 
 Backend: [网易云音乐 API](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
+## USE
+### 智能机器人
+`/ff`  +  `你想查询的关键词`
+
+### 历史上的今天
+`/today`
+
+###
 
 ## TODO
 

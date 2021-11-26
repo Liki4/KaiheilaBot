@@ -17,6 +17,11 @@ type config struct {
 	FFRobot struct {
 		RobotApi string `toml:"robotapi"`
 	} `toml:"ffrobot"`
+
+	Tih struct {
+		TihApi string `toml:"tihapi"`
+		Token  string `toml:"token"`
+	} `toml:"tih"`
 }
 
 var conf *config
