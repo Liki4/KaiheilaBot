@@ -14,7 +14,7 @@ import (
 
 func Run() {
 	l := log.Logger{
-		Level:  log.ErrorLevel,
+		Level:  log.TraceLevel,
 		Writer: &log.ConsoleWriter{},
 	}
 	s := khl.New(conf.Get().KhlBot.Token, plog.NewLogger(&l))
