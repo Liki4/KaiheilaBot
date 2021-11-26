@@ -14,26 +14,29 @@ go build .
 
 ## API
 
-Backend: [网易云音乐 API](https://github.com/Binaryify/NeteaseCloudMusicApi)
+Backend: 
+* [网易云音乐 API](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
+* [API大全](https://www.alapi.cn/)
 
 ## USE
 ### 智能机器人
-`/ff`  +  `你想查询的关键词`
+`羊驼`  +  `你想查询的关键词`
 
 ### 历史上的今天
-`/today`
+`羊驼` + `历史上的今天`
 
 ###
 
 ## TODO
 
-- [ ] Playlist
-- [ ] Random when Playlist is empty
-- [ ] `/search` Command
-- [ ] `/next` Command
-- [ ] `/skip` Command
-- [ ] `/pause` Command
-- [ ] `/play` Command
+- [x] 智能机器人
+- [x] 历史上的今天
+- [ ] 微博热搜
+- [ ] idk
+- [ ] idk
+- [ ] idk
+- [ ] idk
 
 ## License
 
