@@ -11,7 +11,9 @@ type config struct {
 	} `toml:"khlbot"`
 
 	Ncm struct {
-		NcmApi string `toml:"ncmapi"`
+		NcmApi  string `toml:"ncmapi"`
+		Phone   string `toml:"phone"`
+		Md5Pass string `toml:"md5pass"`
 	} `toml:"ncm"`
 }
 

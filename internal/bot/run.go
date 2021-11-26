@@ -13,6 +13,7 @@ import (
 )
 
 func Run() {
+
 	l := log.Logger{
 		Level:  log.ErrorLevel,
 		Writer: &log.ConsoleWriter{},

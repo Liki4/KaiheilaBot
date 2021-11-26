@@ -1,4 +1,4 @@
-package Handlers
+package handlers
 
 import (
 	"github.com/lonelyevil/khl"

@@ -3,3 +3,5 @@ token = ""
 
 [ncm]
 ncmapi = ""
+phone = ""
+md5pass = ""
