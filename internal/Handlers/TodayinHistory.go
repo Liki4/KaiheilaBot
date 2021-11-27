@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-type TodayEvent struct {
+type TodayEventList struct {
 	Code int    `json:"code"`
 	Msg  string `json:"msg"`
 	Data []struct {
@@ -36,16 +36,15 @@ func min(a, b int) int {
 	return b
 }
 
-func Today() (string, error) {
-	api := conf.Get().Tih.TihApi
-	token := conf.Get().Tih.Token
+func TodayInHistory() (string, error) {
+	api := conf.Get().Alapi.TihApi
+	token := conf.Get().Alapi.Token
 
 	m := time.Now().Month()
 	month := strconv.Itoa(int(m))
 	day := strconv.Itoa(time.Now().Day())
 
 	payload := strings.NewReader("token=" + token + "&monthday=" + string(month) + string(day) + "&page=1")
-	//println("token=" + token + "&monthday=" + string(month) + string(day) + "&page=1")
 
 	req, _ := http.NewRequest("POST", api, payload)
 
@@ -54,13 +53,13 @@ func Today() (string, error) {
 	res, _ := http.DefaultClient.Do(req)
 
 	defer res.Body.Close()
-	j_body, _ := ioutil.ReadAll(res.Body)
+	jBody, _ := ioutil.ReadAll(res.Body)
 
 	//fmt.Println(res)
-	fmt.Println(string(j_body))
+	fmt.Println(string(jBody))
 
-	var body TodayEvent
-	err := json.Unmarshal(j_body, &body)
+	var body TodayEventList
+	err := json.Unmarshal(jBody, &body)
 	if err != nil {
 		return "", err
 	}
@@ -72,11 +71,11 @@ func Today() (string, error) {
 	return eventList, nil
 }
 
-func TodayHandler(ctx *khl.TextMessageContext) {
+func TodayInHistoryHandler(ctx *khl.TextMessageContext) {
 	if ctx.Extra.ChannelName != "Test" || ctx.Common.Type != khl.MessageTypeText || ctx.Extra.Author.Bot {
 		return
 	}
-	list, err := Today()
+	list, err := TodayInHistory()
 	if err != nil {
 		return
 	}
@@ -93,5 +92,4 @@ func TodayHandler(ctx *khl.TextMessageContext) {
 	if err != nil {
 		return
 	}
-
 }

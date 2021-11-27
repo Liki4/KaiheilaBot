@@ -6,6 +6,7 @@ import (
 	"github.com/lonelyevil/khl"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"strings"
 )
 
@@ -16,26 +17,24 @@ type RobotContent struct {
 
 func RobotCommunicate(msg string) (string, error) {
 	api := conf.Get().FFRobot.RobotApi
-	//println(api)
 
-	//http query
-	url := api + msg
-	//println(url)
+	queryUrl := api + url.QueryEscape(url.QueryEscape(msg))
+	//println(queryUrl)
 
-	resp, err := http.Get(url)
+	resp, err := http.Get(queryUrl)
 	if err != nil {
 		return "", err
 	}
 	defer resp.Body.Close()
 
-	j_body, err := ioutil.ReadAll(resp.Body)
+	jBody, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}
 	//fmt.Println(string(j_body))
 
 	var body RobotContent
-	err = json.Unmarshal(j_body, &body)
+	err = json.Unmarshal(jBody, &body)
 	if err != nil {
 		return "", err
 	}
@@ -54,11 +53,12 @@ func RobotHandler(ctx *khl.TextMessageContext) {
 	if strings.HasPrefix(ctx.Common.Content, "羊驼") {
 		msg := strings.TrimSpace(ctx.Common.Content[6:])
 		//println(msg)
-
-		index := strings.Index(msg, "历史上的今天")
-		if index != -1 {
-			TodayHandler(ctx)
-		} else {
+		switch true {
+		case strings.Index(msg, "历史上的今天") != -1:
+			TodayInHistoryHandler(ctx)
+		case strings.Index(msg, "热搜") != -1:
+			TodayTopHandler(ctx, msg)
+		default:
 			body, err := RobotCommunicate(msg)
 			if err != nil {
 				return

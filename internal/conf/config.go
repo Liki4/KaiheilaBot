@@ -18,10 +18,11 @@ type config struct {
 		RobotApi string `toml:"robotapi"`
 	} `toml:"ffrobot"`
 
-	Tih struct {
+	Alapi struct {
 		TihApi string `toml:"tihapi"`
+		Tpapi  string `toml:"tpapi"`
 		Token  string `toml:"token"`
-	} `toml:"tih"`
+	} `toml:"alapi"`
 }
 
 var conf *config
